@@ -5,7 +5,7 @@ class Aluno {
     
     public function __construct(){
         $this->classe = new Geral_Model();
-        $this->realizarCiclo = new RealizarCiclo();
+        //$this->realizarCiclo = new RealizarCiclo();
         $this->uri = new Uri();
         $this->template = new Template();
     }
