@@ -33,7 +33,7 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">CPF</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="digite o cpf">
+                        <input type="text" class="form-control" name="cpf" title="digite o cpf">
                     </div>
                 </div>
                 <div class="form-group">
