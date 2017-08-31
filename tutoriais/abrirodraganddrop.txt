@@ -1,1 +1,0 @@
-http://localhost/logistica/tpl/dnd.php?simulador_id=1
