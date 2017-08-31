@@ -26,18 +26,11 @@ class CicloSimulador {
         echo $this->template->template('templates/template.tpl')->view('view/cicloSimulador/editar.php')->data( $data )->render();
     }
     
-    public function deletar(){
-        $id = $this->uri->segment(4);
-        if ( $this->cicloSimulador->deletar($id) ){ 
-            setcookie('msg',"Deletado!"); 
-        }
-        redirect('cicloSimulador/listar');
-    }
     
-    public function adicionar(){
-        // resgata variáveis do formulário
-        $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : ''; #Resgata variáveis do formulário
-        $imagem_csm = isset($_FILES['imagem_csm']) ? $_FILES['imagem_csm'] : ''; #Resgata variáveis do formulário
+    public function novo(){
+        
+        $descricao_csm = isset($_POST['descricao_csm']) ? $_POST['descricao_csm'] : ''; #Resgata variáveis do formulário
+        $imagem_csm = isset($_FILE['imagem_csm']) ? $_FILE['imagem_csm'] : ''; #Resgata variáveis do formulário
         $id_ccr = isset($_POST['id_ccr']) ? $_POST['id_ccr'] : ''; #Resgata variáveis do formulário
         $id_sml = isset($_POST['id_sml']) ? $_POST['id_sml'] : ''; #Resgata variáveis do formulário
         
@@ -45,7 +38,7 @@ class CicloSimulador {
 		$imagem_csm 	= $_FILES['imagem_csm']['name'];
 			
 			//Pasta onde o arquivo vai ser salvo
-			$_UP['pasta'] = 'foto2/';
+			$_UP['pasta'] = 'foto/';
 			
 			//Tamanho máximo do arquivo em Bytes
 			$_UP['tamanho'] = 1024*1024*100; //5mb
@@ -121,52 +114,41 @@ class CicloSimulador {
 				}
 			}
 		
-		
-        if (empty($descricao)){ #Verifica se os campos estão preenchidos
-            setcookie('msg','Dados em branco!'); #Se não tiver, armazena mensagem para mostrar.
-            } else {
-                    #$nome  = htmlspecialchars(strip_tags($_POST['nome'])); #O html special e strip_tags serve para evitar a tentativa de sql_eject no BD
-                    
-                    $this->cicloSimulador->__set('descricao_csm', $descricao);
-                    $this->cicloSimulador->__set('imagem_csm', $imagem_csm);
-                    $this->cicloSimulador->__set('id_ccr', $id_ccr);
-                    $this->cicloSimulador->__set('id_sml', $id_sml);
-                    
-                    if ( $this->cicloSimulador->adicionar() ){ #Aqui faz o insert e seta um cookie para mostrar depois dependendo da situação (se deu certo ou não)
-                        setcookie('msg','Novo curso cadastrado!'); #Deu bom
-                    } else {
-                        setcookie('msg','Ocorreu algum erro..'); #Deu ruim
-                    }
-            }
+        
+        $this->cicloSimulador->__set('descricao_csm', $descricao_csm);
+        $this->cicloSimulador->__set('imagem_csm', $imagem_csm);
+        $this->cicloSimulador->__set('id_ccr', $id_ccr);
+        $this->cicloSimulador->__set('id_sml', $id_sml);
+        
+        $this->cicloSimulador->adicionar();
+
+        redirect('cicloSimulador');
+    }
+
+    public function atualizar(){
+        $id = $this->uri->segment(4);
+       	$this->cicloSimulador->__set('descricao_csm', $descricao_csm);
+        $this->cicloSimulador->__set('imagem_csm', $imagem_csm);
+        $this->cicloSimulador->__set('id_ccr', $id_ccr);
+        $this->cicloSimulador->__set('id_sml', $id_sml);
+        
+
+        $this->cicloSimulador->atualizar($id);
+
+        redirect('cicloSimulador/editar/' . $id);
+    }
+    
+     public function deletar(){
+        $id = $this->uri->segment(4);
+        if ($this->cicloSimulador->deletar($id)){ 
+               setcookie('msg','Dados Deletado!'); #Deu bom
+        }
         redirect('cicloSimulador/listar');
     }
     
-    public function atualizar(){
-       // $simulador = new Simulador_model(); #Cria novo objeto
-        $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : ''; #Resgata variáveis do formulário
-        $imagem_csm = isset($_POST['imagem_csm']) ? $_POST['imagem_csm'] : ''; #Resgata variáveis do formulário
-        $id_ccr = isset($_POST['id_ccr']) ? $_POST['id_ccr'] : ''; #Resgata variáveis do formulário
-        $id_sml = isset($_POST['id_sml']) ? $_POST['id_sml'] : ''; #Resgata variáveis do formulário
-        //$id = $_GET['id'];
-        $id = $this->uri->segment(4);
-        if (empty($descricao)){ #Verifica se os campos estão preenchidos
-            setcookie('msg',"Dados em branco!"); #Se não tiver, armazena mensagem para mostrar.
-            } else {
-                    $descricao  = htmlspecialchars(strip_tags($_POST['descricao'])); #O html special e strip_tags serve para evitar a tentativa de sql_eject no BD
-                    $this->cicloSimulador->__set('descricao_csm', $descricao);
-                    $this->cicloSimulador->__set('imagem_csm', $imagem_csm);
-                    $this->cicloSimulador->__set('id_ccr', $id_ccr);
-                    $this->cicloSimulador->__set('id_sml', $id_sml);
-                    //$id = $_GET['id']; #Pega o ID para localizar no Banco de dados
-                    if ($this->cicloSimulador->atualizar($id)){ #Aqui faz o insert e seta um cookie para mostrar depois, dependendo da situação (se deu certo ou não)
-                        setcookie('msg','Dados atualizados!'); # Deu bom
-                    } else {
-                        setcookie('msg','Ocorreu algum erro..'); # Deu ruim
-                    }
 
-            }
-        redirect('cicloSimulador/editar/' . $id);
-    }
+    //public function Eliminar(){
+        //$this->model->Eliminar($_REQUEST['id_asm']);
+       // header('Location: index.php');
+   // }
 }
-
-?>

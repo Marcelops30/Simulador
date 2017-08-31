@@ -616,7 +616,7 @@ class Item_model {
     */
    
 	public function listarTodos() {
-		$sql = "SELECT * FROM $this->table  INNER JOIN tb_ativ_simu ON ( $this->table .TB_ATIV_SIMU_id_asm = tb_ativ_simu_id_asm)";
+		$sql = "SELECT * FROM $this->table  INNER JOIN tb_ativ_simu ON ( $this->table .TB_ATIV_SIMU_id_asm = tb_ativ_simu.id_asm)";
 		$stmt = DB::prepare ( $sql );
 		$stmt->execute ();
 		return $stmt->fetchAll ();
@@ -711,13 +711,7 @@ class CicloSimulador_Model {
 			return $this->$atrib;
 		}
     
-        public function setDescricao($descricao_csm){
-            $this->descricao_csm = $descricao_csm;
-        }
-    
-        public function getDescricao(){
-            return $this->descricao_csm;
-        }
+       
 
 		public function adicionar() {
             $sql = "INSERT INTO $this->table ( descricao_csm, imagem_csm, TB_COMP_CURC_id_ccr, TB_SIMULADOR_id_sml) 
@@ -737,7 +731,7 @@ class CicloSimulador_Model {
                                                          TB_SIMULADOR_id_sml = :id_sml
                                                                      WHERE $this->id = :id";
 			$stmt = DB::prepare($sql);
-			$stmt->bindParam(':descricao', $this->__get('descricao'));
+			$stmt->bindParam(':descricao_csm', $this->__get('descricao_csm'));
                         $stmt->bindParam( ':imagem_csm' , $this->__get('imagem_csm'));
                         $stmt->bindParam( ':id_ccr' , $this->__get('id_ccr'));
                         $stmt->bindParam( ':id_sml' , $this->__get('id_sml'));

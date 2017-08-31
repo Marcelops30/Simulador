@@ -27,63 +27,51 @@ class Item {
         echo $this->template->template('templates/template.tpl')->view('view/item/listar.php')->data( $data )->render();
  }
 
-    public function deletar(){
-        $id = $this->uri->segment(4);
-        if ( $this->item->deletar($id) ){ 
-            setcookie('msg',"Deletado!"); 
-        }
+     public function novo(){
+        
+        $nome_ias = isset($_POST['nome_ias']) ? $_POST['nome_ias'] : ''; #Resgata variáveis do formulário
+        $seguencia_ias = isset($_POST['seguencia_ias']) ? $_POST['seguencia_ias'] : ''; #Resgata variáveis do formulário
+        $id_asm = isset($_POST['id_asm']) ? $_POST['id_asm'] : ''; #Resgata variáveis do formulário
+       
+        
+        
+        
+        
+        
+        $this->item->__set('nome_ias', $nome_ias);
+        $this->item->__set('seguencia_ias', $seguencia_ias);
+        $this->item->__set('id_asm', $id_asm);
+        
+        $this->item->adicionar();
 
-        redirect('Item/listar');
- }
-
-    public function novo(){
-        $nome = isset($_POST['nome_ias']) ? $_POST['nome_ias'] : ''; #Resgata variáveis do formulário
-        $seguencia = isset($_POST['seguencia_ias']) ? $_POST['seguencia_ias'] : ''; #Resgata variáveis do formulário
-        $id = isset($_POST['id_asm']) ? $_POST['id_asm'] : ''; #Resgata variáveis do formulário
-        if (empty($nome)){ #Verifica se os campos estão preenchidos
-            setcookie('msg','Dados em branco!'); #Se não tiver, armazena mensagem para mostrar.
-            } else {
-                    $nome  = htmlspecialchars(strip_tags($_POST['nome_ias'])); #O html special e strip_tags serve para evitar a tentativa de sql_eject no BD
-                    $this->item->__set('nome_ias', $nome);
-                    $this->item->__set('seguencia_ias', $seguencia);
-                    $this->item->__set('id_asm', $id);
-
-                    if ($this->item->adicionar()){ #Aqui faz o insert e seta um cookie para mostrar depois dependendo da situação (se deu certo ou não)
-                        setcookie('msg','Novo item cadastrado!'); #Deu bom
-                    } else {
-                        setcookie('msg','Ocorreu algum erro..'); #Deu ruim
-                    }
-
-            }
         redirect('item');
     }
-    
-    public function atualizar(){
-        
-       $nome = isset($_POST['nome_ias']) ? $_POST['nome_ias'] : ''; #Resgata variáveis do formulário
-        $seguencia = isset($_POST['seguencia_ias']) ? $_POST['seguencia_ias'] : ''; #Resgata variáveis do formulário
-        $id = isset($_POST['id_asm']) ? $_POST['id_asm'] : ''; #Resgata variáveis do formulário
-        $id = $this->uri->segment(4);
-        
-        if (empty($nome)){ #Verifica se os campos estão preenchidos
-            setcookie('msg',"Dados em branco!"); #Se não tiver, armazena mensagem para mostrar.
-            } else {
-                    $nome  = htmlspecialchars(strip_tags($_POST['nome_ias'])); #O html special e strip_tags serve para evitar a tentativa de sql_eject no BD
-                    $this->item->__set('nome_ias', $nome);
-                    $this->item->__set('seguencia_ias', $seguencia);
-                    $this->item->__set('id_asm', $id);
-                    
-                    if ($this->item->atualizar($id)){ #Aqui faz o insert e seta um cookie para mostrar depois, dependendo da situação (se deu certo ou não)
-                        setcookie('msg','Dados atualizados!'); # Deu bom
-                    } else {
-                        setcookie('msg','Ocorreu algum erro..'); # Deu ruim
-                    }
 
-            }
+    public function atualizar(){
+        $id = $this->uri->segment(4);
+        $this->item->__set('nome_ias', $nome_ias);
+        $this->item->__set('seguencia_ias', $seguencia_ias);
+        $this->item->__set('id_asm', $_POST['id_asm']);
+        
+
+        $this->item->atualizar($id);
+
         redirect('item/editar/' . $id);
     }
-}
+    
+     public function deletar(){
+        $id = $this->uri->segment(4);
+        if ($this->item->deletar($id)){ 
+               setcookie('msg','Dados Deletado!'); #Deu bom
+        }
+        redirect('item/listar');
+    }
+    
 
-?>
+    //public function Eliminar(){
+        //$this->model->Eliminar($_REQUEST['id_asm']);
+       // header('Location: index.php');
+   // }
+}
 
 
