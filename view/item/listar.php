@@ -15,8 +15,8 @@
             <td><?php echo $r->sequencia_ias; ?></td>
             <td><?php echo $r->id_asm; ?></td>
             <td>
-                <a href="<?= base_url('Item/editar/' . $r->id_ias); ?>">Editar</a>
-                <a onclick="javascript:return confirm('¿Certeza que queres eliminar este registro?');" href="<?= base_url('Item/deletar/' . $r->id_ias); ?>">Eliminar</a>
+                <a href="<?= base_url('Item/editar/' . $r->id_ias); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar</a>
+                <a onclick="javascript:return confirm('¿Certeza que queres eliminar este registro?');" href="<?= base_url('Item/deletar/' . $r->id_ias); ?>"><i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar</a>
             </td>
             <td>
                 

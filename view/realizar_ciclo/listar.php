@@ -24,8 +24,10 @@
             <td>
                 <?= $dados->id_usu ?>
             </td>
-            <td><a href="<?= base_url('realizarciclo/deletar/'.$dados->id_rcc) ?>">Deletar</a>
-                <a href="<?= base_url('realizarciclo/editar/'.$dados->id_rcc) ?>">Editar</a></td>
+            <td>
+                <a href="<?= base_url('realizarciclo/editar/'.$dados->id_csm) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar</a>
+                <a href="<?= base_url('realizarciclo/deletar/'.$dados->id_csm) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i>Deletar</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

@@ -20,8 +20,10 @@
             <td>
                 <?= $dados->cargaHoraria_ccr ?>
             </td>
-            <td><a href="<?= base_url('ComponenteCurricular/deletar/'.$dados->id_ccr) ?>">Deletar</a>
-                <a href="<?= base_url('ComponenteCurricular/editar/'.$dados->id_ccr) ?>">Editar</a></td>
+            <td>
+                <a href="<?= base_url('ComponenteCurricular/editar/'.$dados->id_csm) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar</a>
+                <a href="<?= base_url('ComponenteCurricular/deletar/'.$dados->id_csm) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i>Deletar</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

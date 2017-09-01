@@ -20,8 +20,10 @@
             <td>
                 <?= $dados->nome_sml ?>
             </td>
-            <td><a href="<?= base_url('competenciaNorteadora/deletar/'.$dados->id_cnr) ?>">Deletar</a>
-                <a href="<?= base_url('competenciaNorteadora/editar/'.$dados->id_cnr) ?>">Editar</a></td>
+            <td>
+                <a href="<?= base_url('competenciaNorteadora/editar/'.$dados->id_csm) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar</a>
+                <a href="<?= base_url('competenciaNorteadora/deletar/'.$dados->id_csm) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i>Deletar</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
