@@ -27,8 +27,8 @@
                 ?>
             <br>
             <div class="btn-group">
-                <a href="<?= base_url('usuario/deletar/'.$dados->id_usu) ?>" class="btn btn-xs btn-danger">Deletar</a>
-                <a href="<?= base_url('usuario/editar/'.$dados->id_usu) ?>" class="btn btn-xs btn-warning">Editar</a>
+                <a class="btn btn-warning"  href="<?= base_url('usuario/deletar/'.$dados->id_usu) ?>" class="btn btn-xs btn-danger">Deletar</a>
+                <a class="btn btn-danger" href="<?= base_url('usuario/editar/'.$dados->id_usu) ?>" class="btn btn-xs btn-warning">Editar</a>
             </div>
             </center>
             </td>
