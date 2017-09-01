@@ -3,13 +3,13 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Nome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" required="required" title="nome" maxlength="45">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="descricao" class="control-label col-sm-4">Descricao</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="descricao">
+                        <input type="text" class="form-control" name="descricao" title="descrição" maxlength="45">
                         <center><?php if (isset($_COOKIE['msg'])){ echo $_COOKIE['msg']; } setcookie('msg', NULL, time()-1) ?></center>
                     </div>
                 </div>

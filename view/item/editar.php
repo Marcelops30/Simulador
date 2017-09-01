@@ -3,12 +3,12 @@
 
     <div class="form-group">
         <label>Nome</label>
-        <input type="text" name="nome_ias" value="<?= $resultado->nome_ias; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="nome_ias" value="<?= $resultado->nome_ias; ?>" class="form-control" title="nome" required="required" maxlength="45" />
     </div>
 
     <div class="form-group">
         <label>Seguencia</label>
-        <input type="text" name="sequencia_ias" value="<?= $resultado->sequencia_ias; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="sequencia_ias" value="<?= $resultado->sequencia_ias; ?>" class="form-control" maxlength="11" />
     </div>
     <div class="form-group">
         <label>Atividade Simulador</label>

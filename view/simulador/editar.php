@@ -6,13 +6,13 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Descricao</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nome" value="<?= $resultado->nome_sml ?>">
+                        <input type="text" class="form-control" name="nome" required="required" title="nome" maxlength="45" value="<?= $resultado->nome_sml ?>">
                         </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Descricao</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="descricao" value="<?= $resultado->descricao_sml ?>">
+                        <input type="text" class="form-control" name="descricao" title="descrição" maxlength="45" value="<?= $resultado->descricao_sml ?>">
                         <center><?php if (isset($_COOKIE['msg'])){ echo $_COOKIE['msg']; } setcookie('msg', NULL, time()-1) ?></center>
                     </div>
                 </div>

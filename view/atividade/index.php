@@ -3,7 +3,7 @@
    
     <div class="form-group">
         <label>Nome</label>
-        <input type="text" name="nome_asm" class="form-control" required="required" placeholder=""  pattern="[a-zA-Z\s]+$" title="Digite o nome"/>
+        <input type="text" name="nome_asm" class="form-control" required="required" placeholder=""  pattern="[a-zA-Z\s]+$" title="Digite o nome" maxlength="45"/>
     </div>
 
     <div class="form-group">
@@ -13,12 +13,12 @@
 
     <div class="form-group">
         <label>Pontuação</label>
-        <input type="number" name="pontuacao_asm" required="required" class="form-control" pattern="[0-9]+$"  />
+        <input type="number" name="pontuacao_asm" required="required" class="form-control" pattern="[0-9]+$" maxlength="11" />
     </div>
 
     <div class="form-group">
         <label>Imagem</label>
-        <input type="file" name="imagem_asm" required="required" class="form-control"  />
+        <input type="file" name="imagem_asm" required="required" class="form-control" maxlength="45" />
     </div>
     
     <div class="form-group">

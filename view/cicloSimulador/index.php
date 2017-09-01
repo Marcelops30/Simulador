@@ -3,14 +3,14 @@
 <div class="form-group">
     <label for="name" class="control-label col-sm-4">Descricao</label>
     <div class="col-sm-8">
-        <input type="text" class="form-control" name="descricao_csm">
+        <input type="text" class="form-control" name="descricao_csm" required="required" maxlength="45">
    </div>
 </div>
 
 <div class="form-group">
     <label for="name" class="control-label col-sm-4">Imagem</label>
     <div class="col-sm-8">
-        <input type="file"  name="imagem_csm" class="form-control">
+        <input type="file"  name="imagem_csm" class="form-control" maxlength="45">
    </div>
 </div>
 

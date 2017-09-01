@@ -8,38 +8,38 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Nome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" required="required" name="nome" pattern="[a-zA-Z\s]+$" title="Digite seu nome">
+                        <input type="text" class="form-control" required="required" name="nome" pattern="[a-zA-Z\s]+$" title="Digite seu nome" maxlength="45">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Sobrenome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" required="required" name="sobrenome" pattern="[a-zA-Z\s]+$">
+                        <input type="text" class="form-control" required="required" name="sobrenome" title="sobrenome" pattern="[a-zA-Z\s]+$" maxlength="30">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Username</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" required="required" name="username" pattern="[a-zA-Z0-9\s]+$">
+                        <input type="text" class="form-control" required="required" name="username" title="username" pattern="[a-zA-Z0-9\s]+$" maxlength="25">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Email</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" required="required" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <input type="email" class="form-control" required="required" name="email" title="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength="45">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">CPF</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="cpf" title="digite o cpf">
+                        <input type="text" class="form-control" name="cpf" required="required" title="digite o cpf" maxlength="11">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Senha</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" required="required" name="senha">
+                        <input type="password" class="form-control" required="required" name="senha" maxlength="25">
                     </div>
                 </div>
 

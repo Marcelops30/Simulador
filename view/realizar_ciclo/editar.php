@@ -6,15 +6,15 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Pontuaçao Alcançada</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="pontuacaoAlcancadaRcc" value="<?= $resultado->pontuacaoAlcancada_rcc ?>">
+                        <input type="text" class="form-control" name="pontuacaoAlcancadaRcc" maxlength="11" title="pontuação" value="<?= $resultado->pontuacaoAlcancada_rcc ?>">
                     </div>
                 </div>
 				<div class="form-group">
                     <label for="name" class="control-label col-sm-4">Ciclo</label>
                     <div class="col-sm-8">
                     <?php 
-						echo gerar_dropdown('tb_cicl_simu','id_csm', 'descricao_csm', 'id_csm');
-					?>
+			echo gerar_dropdown('tb_cicl_simu','id_csm', 'descricao_csm', 'id_csm');
+		    ?>
                     
                     </div>
                 </div>
@@ -23,8 +23,8 @@
                     <label for="name" class="control-label col-sm-4">Usuario</label>
                     <div class="col-sm-8">
                     <?php 
-						echo gerar_dropdown('tb_usuario','id_usu', 'nome_usu', 'id_usu');
-					?>
+		        echo gerar_dropdown('tb_usuario','id_usu', 'nome_usu', 'id_usu');
+		    ?>
                     
                     </div>
                 </div>

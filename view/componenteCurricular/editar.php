@@ -7,14 +7,14 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Nome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nome" value="<?= $resultado->nome_ccr ?>">
+                        <input type="text" class="form-control" name="nome" maxlength="45" value="<?= $resultado->nome_ccr ?>">
                         
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Carga horaria</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="cargaHoraria" value="<?= $resultado->cargaHoraria_ccr ?>">
+                        <input type="text" class="form-control" name="cargaHoraria" maxlength="11" value="<?= $resultado->cargaHoraria_ccr ?>">
                     </div>
                 </div>
                 <button type="submit" name="acao" value="update" class="btn btn-default"> Atualizar </button>

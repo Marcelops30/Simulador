@@ -5,22 +5,22 @@
 
     <div class="form-group">
         <label>Nome</label>
-        <input type="text" name="nome_asm" value="<?php echo $resultado->nome_asm; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="nome_asm" value="<?php echo $resultado->nome_asm; ?>" class="form-control" placeholder="" maxlength="45" />
     </div>
 
     <div class="form-group">
         <label>Tempo</label>
-        <input type="text" name="tempo_asm" value="<?php echo $resultado->tempo_asm; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:20" />
+        <input type="text" name="tempo_asm" value="<?php echo $resultado->tempo_asm; ?>" class="form-control"  />
     </div>
 
     <div class="form-group">
         <label>Pontuação</label>
-        <input type="text" name="pontuacao_asm" value="<?php echo $resultado->pontuacao_asm; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:240" />
+        <input type="text" name="pontuacao_asm" value="<?php echo $resultado->pontuacao_asm; ?>" class="form-control" maxlength="11" />
     </div>
 	
 	<div class="form-group">
         <label>Imagem</label>
-        <input type="text" name="imagem_asm" value="<?php echo $resultado->imagem_asm; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:240" />
+        <input type="text" name="imagem_asm" value="<?php echo $resultado->imagem_asm; ?>" class="form-control" maxlength="45" />
     </div>
     
     <div class="form-group">

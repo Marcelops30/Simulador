@@ -8,14 +8,15 @@
 <div class="form-group">
     <label for="name" class="control-label col-sm-4">Descricao</label>
     <div class="col-sm-8">
-        <input type="text" class="form-control" name="descricao_csm" value="<?= $resultado->descricao_csm ?>">
+        <input type="text" class="form-control" name="descricao_csm" required="required" maxlength="45" value="<?= $resultado->descricao_csm ?>">
    </div>
 </div>
 
 <div class="form-group">
     <label for="name" class="control-label col-sm-4">Imagem</label>
     <div class="col-sm-8">
-        <input type="file" class="form-control" name="imagem_csm" value="<?= $resultado->imagem_csm ?>">
+        <input type="file" class="form-control" name="imagem_csm" maxlength="45" value="<?= $resultado->imagem_csm ?>">
+        
    </div>
 </div>
 

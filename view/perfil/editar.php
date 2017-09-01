@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Descricao</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" required="required" name="descricao" pattern="[a-zA-Z\s]+$" value="<?= $resultado->desc_per ?>">
+                        <input type="text" class="form-control" required="required" name="descricao" maxlength="45" pattern="[a-zA-Z\s]+$" value="<?= $resultado->desc_per ?>">
                     </div>
                 </div>
                 <button type="submit" name="acao" value="update" class="btn btn-default"> Atualizar </button>

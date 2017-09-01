@@ -7,7 +7,7 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Nome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" required="required" title="nome" maxlength="45">
                     </div>
                 </div>
                 <div class="form-group">

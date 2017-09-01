@@ -6,7 +6,7 @@
                 <div class="form-group">
                     <label for="name" class="control-label col-sm-4">Nome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nome" value="<?= $resultado->nome_cur ?>">
+                        <input type="text" class="form-control" name="nome" maxlength="45" title="nome do curso" value="<?= $resultado->nome_cur ?>">
                         <center><?php if (isset($_COOKIE['msg'])){ echo $_COOKIE['msg']; } setcookie('msg', NULL, time()-1) ?></center>
                     </div>
                 </div>
