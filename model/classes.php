@@ -142,7 +142,7 @@ class Usuario_model {
     }
 
 	public function listarTodos() {
-		$sql = "SELECT * FROM $this->table INNER JOIN tb_perfil ON ( $this->table .TB_PERFIL_id_per = tb_perfil.id_per)";
+		$sql = "SELECT * FROM $this->table INNER JOIN tb_perfil ON ( $this->table .TB_PERFIL_id_per = tb_perfil.id_per) LIMIT 10";
 		$stmt = DB::prepare ( $sql );
 		$stmt->execute ();
 		return $stmt->fetchAll ();
@@ -225,7 +225,7 @@ class Simulador_model {
     */
    
 	public function listarTodos() {
-		$sql = "SELECT * FROM $this->table";
+		$sql = "SELECT * FROM $this->table LIMIT 10";
 		$stmt = DB::prepare ( $sql );
 		$stmt->execute ();
 		return $stmt->fetchAll ();
@@ -308,7 +308,7 @@ class Atividade_model
     */
    
 	public function listarTodos() {
-		$sql = "SELECT * FROM $this->table INNER JOIN tb_cicl_simu ON ( $this->table .TB_CICL_SIMU_id_csm = tb_cicl_simu.id_csm)";
+		$sql = "SELECT * FROM $this->table INNER JOIN tb_cicl_simu ON ( $this->table .TB_CICL_SIMU_id_csm = tb_cicl_simu.id_csm) LIMIT 10";
 		$stmt = DB::prepare ( $sql );
 		$stmt->execute ();
 		return $stmt->fetchAll ();
@@ -386,7 +386,7 @@ class ComponenteCurricular_model {
 		}
 
     public function listarTodos(){
-                $sql  = "SELECT * FROM $this->table";
+                $sql  = "SELECT * FROM $this->table LIMIT 10";
                 $stmt = DB::prepare($sql);
                 $stmt->execute();
                 return $stmt->fetchAll();
@@ -473,7 +473,7 @@ class CompetenciaNorteadora_Model {
 		}
 
     public function listarTodos(){
-                $sql  = "SELECT * FROM $this->table  INNER JOIN tb_simulador ON ( $this->table .TB_SIMULADOR_id_sml = tb_simulador.id_sml)";
+                $sql  = "SELECT * FROM $this->table  INNER JOIN tb_simulador ON ( $this->table .TB_SIMULADOR_id_sml = tb_simulador.id_sml)LIMIT 10";
                 $stmt = DB::prepare($sql);
                 $stmt->execute();
                 return $stmt->fetchAll();
@@ -542,7 +542,7 @@ class Curso_model {
 		}
 
     public function listarTodos(){
-                $sql  = "SELECT * FROM $this->table";
+                $sql  = "SELECT * FROM $this->table LIMIT 10";
                 $stmt = DB::prepare($sql);
                 $stmt->execute();
                 return $stmt->fetchAll();
@@ -616,7 +616,7 @@ class Item_model {
     */
    
 	public function listarTodos() {
-		$sql = "SELECT * FROM $this->table  INNER JOIN tb_ativ_simu ON ( $this->table .TB_ATIV_SIMU_id_asm = tb_ativ_simu.id_asm)";
+		$sql = "SELECT * FROM $this->table  INNER JOIN tb_ativ_simu ON ( $this->table .TB_ATIV_SIMU_id_asm = tb_ativ_simu.id_asm)LIMIT 10";
 		$stmt = DB::prepare ( $sql );
 		$stmt->execute ();
 		return $stmt->fetchAll ();
@@ -677,7 +677,7 @@ class Perfil_model {
 		}
 
 		public function listarTodos(){
-			$sql  = "SELECT * FROM $this->table";
+			$sql  = "SELECT * FROM $this->table LIMIT 10";
 			$stmt = DB::prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll();
@@ -750,7 +750,7 @@ class CicloSimulador_Model {
 		public function listarTodos(){
 			$sql  = "SELECT * FROM $this->table
                     INNER JOIN tb_comp_curc ON ( $this->table .TB_COMP_CURC_id_ccr = tb_comp_curc.id_ccr)
-                    INNER JOIN tb_simulador ON ( $this->table .TB_SIMULADOR_id_sml = tb_simulador.id_sml)";
+                    INNER JOIN tb_simulador ON ( $this->table .TB_SIMULADOR_id_sml = tb_simulador.id_sml)LIMIT 10";
 			$stmt = DB::prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll();
@@ -827,7 +827,7 @@ class RealizarCiclo_model {
                 //$sql  = "SELECT * FROM $this->table";
 				$sql = "SELECT * FROM $this->table  
 						INNER JOIN tb_cicl_simu ON ( $this->table .TB_CICL_SIMU_id_csm = tb_cicl_simu.id_csm)
-						INNER JOIN tb_usuario ON ( $this->table .TB_USUARIO_id_usu = tb_usuario.id_usu)";
+						INNER JOIN tb_usuario ON ( $this->table .TB_USUARIO_id_usu = tb_usuario.id_usu)LIMIT 10";
 				
                 $stmt = DB::prepare($sql);
                 $stmt->execute();
