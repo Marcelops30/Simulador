@@ -17,8 +17,8 @@
                 <?= $dados->nome_cur ?>
             </td>
             <td>
-                <a href="<?= base_url('curso/editar/'.$dados->id_csm) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar</a>
-                <a href="<?= base_url('curso/deletar/'.$dados->id_csm) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i>Deletar</a>
+                <a class="btn btn-warning" href="<?= base_url('curso/editar/'.$dados->id_csm) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar</a>
+                <a class="btn btn-danger" href="<?= base_url('curso/deletar/'.$dados->id_csm) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i>Deletar</a>
             </td>
         </tr>
         <?php endforeach; ?>
