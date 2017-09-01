@@ -473,7 +473,7 @@ class CompetenciaNorteadora_Model {
 		}
 
     public function listarTodos(){
-                $sql  = "SELECT * FROM $this->table  INNER JOIN tb_simulador ON ( $this->table .TB_SIMULADOR_id_sml = tb_simulador_id_sml)";
+                $sql  = "SELECT * FROM $this->table  INNER JOIN tb_simulador ON ( $this->table .TB_SIMULADOR_id_sml = tb_simulador.id_sml)";
                 $stmt = DB::prepare($sql);
                 $stmt->execute();
                 return $stmt->fetchAll();

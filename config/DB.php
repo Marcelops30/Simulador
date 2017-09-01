@@ -7,7 +7,7 @@ define('DB_PASS', '');
 define('SYSTEM_STATUS', 'em_contrucao');
 define('URL_BASE','http://localhost/Simulador_Logistica2/');
 
-
+//jhjhjh
 
 class DB{
 
